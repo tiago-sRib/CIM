@@ -2,7 +2,7 @@
 clear
 clc
 
-[x,FS]=audioread('sting22.wav'); % Fs = 22.05k
+[x,FS]=audioread('media\sting22.wav'); % Fs = 22.05k
 % [x,FS,NBITS]=wavread('.\media\sting22.wav'); % old Matlab versions
 NBITS=16;
 % sound(x,FS,NBITS); % NOTA: x values are already in the range [-1, 1]

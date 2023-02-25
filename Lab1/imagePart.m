@@ -3,7 +3,7 @@ clear
 clc
 
 % reads and displays image
-A=imread('lena512.bmp');
+A=imread('media\lena512.bmp');
 % figure(3)
 % imshow(A,[0 255]); % displays original image
 A=single(A)/255.0; % convert to float and normalizes [0, 1.0]
