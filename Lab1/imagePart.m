@@ -20,20 +20,9 @@ for i = 1:length(N)
     Aq = floor(0.5 + M*A);
     Ar = Aq/M;
     Ae = A - Ar;
-    
-    % scale image to plot
-    Ar=uint8(Ar*255.0);
-    Ae=uint8(Ae*255.0);
-    figure;
-    imshow(Ar, [0 255]);
-    title(['Ar N = ' num2str(N(i))]);
-
-    figure;
-    imshow(Ae, [0 255]);
-    title(['Ae N = ' num2str(Nimg(i))]);
-    
-    % Normalize image to calculate power
-    Ae=single(Ae)/255.0;
+   
+    imwrite(uint8(Ar*255.0), sprintf("images/Ar/N%d.bmp", N(i)));
+    imwrite(uint8(Ae*255.0), sprintf("images/Ae/N%d.bmp", N(i)));
 
     Ps(i) = mean(A(:).^2);
     Pr(i) = mean(Ar(:).^2);
@@ -64,21 +53,13 @@ down2 = downsample(A,2);
 up2 = upsample(down2,2); 
 A_filt2 = filter2(h2, up2);
 
-down2 = uint8(down2*255.0);
-figure;
-imshow(down2, [0 255]);
-title('Downsample image F=2');
-
-up2 = uint8(up2*255.0);
-figure;
-imshow(up2, [0 255]);
-title('Upsample image F=2');
-
-A_filt2 = uint8(A_filt2*255.0);
-figure;
-imshow(A_filt2, [0 255]);
-title('Image filter 2');
-
 down4 = downsample(A,4);
 up4 = upsample(down4,4); 
 A_filt4 = filter2(h4, up4);
+
+imwrite(uint8(down4*255.0), 'images\decimated\down4.bmp');
+imwrite(uint8(down2*255.0), 'images\decimated\down2.bmp');
+imwrite(uint8(up4*255.0), 'images\decimated\up4.bmp');
+imwrite(uint8(up2*255.0), 'images\decimated\up2.bmp');
+imwrite(uint8(A_filt4*255.0), 'images\decimated\A_filt4.bmp');
+imwrite(uint8(A_filt2*255.0), 'images\decimated\A_filt2.bmp');

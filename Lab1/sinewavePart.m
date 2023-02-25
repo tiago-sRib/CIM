@@ -11,11 +11,11 @@ M = 2.^(N-1);
 
 xq = floor(0.5 + x.*M);
 xr = xq./M;
-xe = x - xr;
+xe = xr - x;
 
 Ps = rms(x).^2;
 Pr = rms(xr).^2;
-Pe = rms(xe).^2;
+Pe = rms(xe).^2;    
 SNR = 10*log10(Ps./Pe);
 
 p = polyfit(N, SNR(1:length(N)), 1);
@@ -37,7 +37,7 @@ for i = 1:13
     corr(i) = aux(1,2);
 end
 
-figure;
+figure; 
 plot(N(1:length(N)), corr(1:length(N)), 'o')
 hold on
 plot(N(1:length(N)), corr(1:length(N)))
@@ -48,6 +48,7 @@ legend('Data','Fit')
 hold off
 
 % Original sine wave
+figure;
 [H X]=hist(x,50);
 equalize=50/(max(x)-min(x));
 bar(X, H/sum(H)*equalize, 0.5);
