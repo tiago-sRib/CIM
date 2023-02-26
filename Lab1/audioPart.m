@@ -13,8 +13,8 @@ xlabel('Time (s)');
 ylabel('Amplitude');    
 title('sting22.wav');
 
-N = [2 4 6 8 10 12 14 16];
-M = 2.^(N-1);
+N = [2 4 6 8 10 12 14]; % N = 16 was skiped in order to be able
+M = 2.^(N-1);           % to perform  polyfit
 
 xq = floor(0.5 + x.*M);
 xr = xq./M;
