@@ -45,13 +45,13 @@ hold off
 % Decimation
 F = [2 4];
 h = [1 1];
-
-down2 = downsample(x,2);
-up2 = upsample(down2,2); 
-x_filt2 = filter(h, 1, up2);
-audiowrite("sounds\decimated\down2.wav", down2, FS);
-audiowrite("sounds\decimated\up2.wav", up2, FS);
-audiowrite("sounds\decimated\x_filt2.wav", x_filt2, FS);
+ 
+% down2 = downsample(x,2);
+% up2 = upsample(down2,2); 
+% x_filt2 = filter(h, 1, up2);
+% audiowrite("sounds\decimated\down2.wav", down2, FS);
+% audiowrite("sounds\decimated\up2.wav", up2, FS);
+% audiowrite("sounds\decimated\x_filt2.wav", x_filt2, FS);
 
 down4 = downsample(x,4);
 up4 = upsample(down4,4); 
