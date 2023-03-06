@@ -3,7 +3,7 @@ A = 5000;
 T0 = 1/440;
 f0 = 1/T0;
 Fs = 22050;
-t = 0:1/Fs:1000*T0;
+t = 0:1/Fs:T0;
 
 % Sintetização dos primeiros 5 termos
 x = zeros(size(t));
