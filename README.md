@@ -1,3 +1,8 @@
 ## Codificação de Informação Multimédia
-- **LAB1** - Erro de quantização
-- **LAB2** - Síntese de áudio
+### Audio Part
+- **Audio LAB1** - Erro de quantização
+- **Audio LAB2** - Síntese de áudio
+
+___
+### Visual Part
+- **Visual Lab1** - Introduction to visual signal processing in Matlab

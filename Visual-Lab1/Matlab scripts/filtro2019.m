@@ -1,7 +1,7 @@
 function imagemfiltrada=filtro2019()
 % a funcao 'filtro2019' pede ao user para escolher uma imagem para filtrar e 
 % o tipo de filtro que quer aplicar ? imagem.
-% Usa a fun??o built-in 'fspecial' para criar o filtro.
+% Usa a funcao built-in 'fspecial' para criar o filtro.
 % Podem-se experimentar v?rios tipos de filtros (j? implementados no Matlab):
 % 'motion' para dar efeito de movimento a imagem
 % 'average' e/ou 'gaussian' para fazer uma filtragem passa-baixo
@@ -20,9 +20,9 @@ I=imread(fullname);
 %figure(1); imshow(I); title('imagem original');
 
 disp(' Tipo de filtro? (average, gaussian, motion, sobel, prewitt, ...)');
-tipo_filtro=input(' filtro?')
+tipo_filtro=input(' filtro?');
 disp(' Dimensao n do filtro? (nxn de 3x3 at? 20x20)');
-dim=input(' dim?')
+dim=input(' dim?');
 
 
 switch tipo_filtro

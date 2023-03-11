@@ -1,6 +1,6 @@
-function [resultado1,resultado2] = ampliaReduz (N, factor, metodo);
+function [resultado1,resultado2] = ampliaReduz (N, factor, metodo)
 
-% fun??o para ampliar ou reduzir dimensoes espaciais da imagem "zone-plate"
+% funcao para ampliar ou reduzir dimensoes espaciais da imagem "zone-plate"
 % Recebe as dimensoes N da imagem de teste a construir, 
 % o factor de ampliacao/reducao para aplicar ? imagem de teste criada,
 % e ainda um valor numerico para indicar o metodo de interpola??o a usar:
@@ -25,11 +25,11 @@ if factor<1
     
 % agora obtem nova imagem reduzida usando imresize com o metodo escolhido
     switch metodo
-        case 1,
+        case 1
             ZreduzidaMatlab=imresize(Z,factor,'nearest');
-        case 2,
+        case 2
             ZreduzidaMatlab=imresize(Z,factor,'bilinear');
-        case 3,
+        case 3
             ZreduzidaMatlab=imresize(Z,factor,'bicubic');
     end
     figure(3);
@@ -43,10 +43,10 @@ else
     % come?a por ampliar apenas por repeticao de pixels criando uma matriz
     % de zeros com as dimensoes desejadas
     Zampliada=zeros(factor*N,factor*N);   
-    for(i=1:1:N)
-        for(j=1:1:N)
-            for(k=(factor*i)-1:1:(factor*i)-1+(factor-1))
-                for(l=(factor*j)-1:1:(factor*j)-1+(factor-1))
+    for i=1:1:N
+        for j=1:1:N
+            for k=(factor*i)-1:1:(factor*i)-1+(factor-1)
+                for l=(factor*j)-1:1:(factor*j)-1+(factor-1)
                     Zampliada(k,l)=Z(i,j);
                 end
             end
@@ -58,11 +58,11 @@ else
     
     % agora amplia usando imresize com o m?todo escolhido
     switch metodo
-        case 1,
+        case 1
             ZampliadaMatlab=imresize(Z,factor,'nearest');
-        case 2,
+        case 2
             ZampliadaMatlab=imresize(Z,factor,'bilinear');
-        case 3,
+        case 3
             ZampliadaMatlab=imresize(Z,factor,'bicubic');
     end
     figure(5);
