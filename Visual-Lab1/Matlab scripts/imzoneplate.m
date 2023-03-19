@@ -39,7 +39,7 @@ function I = imzoneplate(N)
 %   Steven L. Eddins
 
 if nargin < 1
-    N = 501;
+    N = 501;    
 end
 
 if rem(N,2) == 1

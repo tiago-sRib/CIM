@@ -13,16 +13,19 @@ freq_range = [0, Fs];
 
 [S, f, t] = spectrogram(x, Window, Noverlap, N, Fs);
 
-% Plot spectrogram
+% Plot spectrogram of original signal
+figure;
 imagesc(t, f, 20*log10(abs(S)));
 axis xy;
 xlabel('Time (s)');
 ylabel('Frequency (Hz)');
 xlim([0, max(t)]);
 ylim(freq_range);
+title('Spectrogram of Original Signal');
 colorbar;
 
-pauta = ["mi4-4" "re4-4" "x0-4" "la4-8" "si4-8" "la4-8" "si4-8"];
+pauta = ["si5-4" "la5-4" "x0-4" "mi6-4" "fa#6-8" "mi6-8" "fa#6-8"];
+
 musica = [pauta pauta];
 bpm = 90;   % Estimativa apenas
 
@@ -33,5 +36,18 @@ for i = 1:length(musica)
     melody = [melody waveform];
 end
 
-sound(melody, Fs)
+sound(melody, Fs);
 audiowrite('audio/u2_remake.wav', melody, Fs);
+
+[S, f, t] = spectrogram(melody, Window, Noverlap, N, Fs);
+
+% Plot spectrogram of recreated signal
+figure;
+imagesc(t, f, 20*log10(abs(S)));
+axis xy;
+xlabel('Time (s)');
+ylabel('Frequency (Hz)');
+xlim([0, max(t)]);
+ylim(freq_range);
+title('Spectrogram of the recreated Signal');
+colorbar;

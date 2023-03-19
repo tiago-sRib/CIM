@@ -5,7 +5,6 @@ clear
 Fs = 22050;
 
 pauta = ["do" "re" 'mi' 'fa' 'fa' 'fa' 'do' 're' 'do' 're' 're' 're' 'do' 'sol' 'fa' 'mi' 'mi' 'mi' 'do' 're' 'mi' "fa"];
-
 melody = [];
 
 for i = 1:length(pauta)
